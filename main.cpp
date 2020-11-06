@@ -30,9 +30,8 @@ int main(){
             for(int e = 0; e < cols; e++){
                 const int ret = (int)(calc((double)e, (double)i, time, (double)n)*255.0);
                 const int r = abs(ret);
-                const int g = std::max(0, ret);
-                const int b = std::max(0, ret);
-                printf("%s  ", bgColor(r, g, b));
+                const int gb = std::max(0, ret);
+                printf("%s  ", bgColor(r, gb, gb));
                 n++;
             }
             printf("%s", CLEARBG);
