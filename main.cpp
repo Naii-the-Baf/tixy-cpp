@@ -10,17 +10,18 @@ double calc(double x, double y, double t, double i){
     if(!cond){
         return 0.0;
     }
-    double val = (double)(sin(atan((y-26.5)/(x-56.5))+t));
+    double val = (double)(sin(atan((y-11.5)/(x-11.5))+t));
     return clamp(val, -1.0, 1.0);
 }
 
 int main(){
     std::ios_base::sync_with_stdio(false);
     std::cout.tie();
-    const int rows = 16;
-    const int cols = 16;
+    const int rows = 24;
+    const int cols = 24;
     double time = 0.0;
     int n;
+    std::cout << resizeTerminalByChars(rows, cols*2);
     const double increment = std::max(0.001, (rows*cols)/1000000.0);
     while(true){
         std::cout << moveCursor(0, 0);

@@ -40,6 +40,13 @@ const char* srestoreCursorPosition(void){
     return buffer;
 }
 
+//Display
+
+const char* resizeTerminalByChars(int rows, int cols){
+    sprintf(buffer, "\033[8;%d;%dt", rows, cols);
+    return buffer;
+}
+
 //Format
 
 const char* textColor(int r, int g, int b){

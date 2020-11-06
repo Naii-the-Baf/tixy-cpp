@@ -17,6 +17,8 @@ const char* restoreCursorPosition(void);
 #define CLEARLINE "\033[K"
 #define CLEARNEWLINE "\n\033[K"
 
+const char* resizeTerminalByChars(int rows, int cols);
+
 //Format
 
 #define CLEARFORMAT "\033[0m"
