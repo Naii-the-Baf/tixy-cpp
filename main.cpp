@@ -15,26 +15,28 @@ double calc(double x, double y, double t, double i){
 }
 
 int main(){
-    const int rows = 54;
-    const int cols = 113;
+    std::ios_base::sync_with_stdio(false);
+    std::cout.tie();
+    const int rows = 16;
+    const int cols = 16;
     double time = 0.0;
     int n;
     const double increment = std::max(0.001, (rows*cols)/1000000.0);
     while(true){
-        printf("%s", moveCursor(1, 0));
+        std::cout << moveCursor(0, 0);
         n = 0;
         for(int i = 0; i < rows; i++){
             if(i > 0){
-                printf("\n");
+                std::cout << std::endl;
             }
             for(int e = 0; e < cols; e++){
                 const int ret = (int)(calc((double)e, (double)i, time, (double)n)*255.0);
                 const int r = abs(ret);
                 const int gb = std::max(0, ret);
-                printf("%s  ", bgColor(r, gb, gb));
+                std::cout << bgColor(r, gb, gb) << "  ";
                 n++;
             }
-            printf("%s", CLEARBG);
+            std::cout << CLEARBG;
         }
         time += increment;
         if(time > 10000000000.0){
