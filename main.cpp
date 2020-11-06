@@ -17,6 +17,7 @@ double calc(double x, double y, double t, double i){
 int main(){
     std::ios_base::sync_with_stdio(false);
     std::cout.tie();
+    srand(time(NULL));
     const int rows = 24;
     const int cols = 24;
     double time = 0.0;
